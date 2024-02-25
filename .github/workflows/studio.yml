@@ -26,7 +26,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     defaults:
       run:
-        working-directory: /
+        working-directory: .
 
     strategy:
       matrix:
@@ -58,7 +58,7 @@ jobs:
           cache: ${{ steps.pkgman.outputs.cache }}
 
       - name: Debug
-        run: ls -la
+        run: pwd
 
       - name: Install dependencies
         run: ${{ steps.pkgman.outputs.package_manager }} install
